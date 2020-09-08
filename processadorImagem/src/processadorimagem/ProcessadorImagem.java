@@ -5,6 +5,8 @@
  */
 package processadorimagem;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author SAMSUNG
@@ -14,8 +16,13 @@ public class ProcessadorImagem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        
+        ImagemPGM imagem1 = new ImagemPGM("imagem.pgm");
+        
+        imagem1.salvarImagem(imagem1.getCurrentMatrix(), "copia.pgm");
+        
     }
     
 }
