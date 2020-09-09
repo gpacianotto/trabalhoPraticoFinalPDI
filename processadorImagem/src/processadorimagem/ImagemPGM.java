@@ -109,4 +109,23 @@ public class ImagemPGM {
         fw.flush();
         } catch (IOException e) {}
     }
+    
+    public void somaPorConstante(int constante){
+        
+        for(int i = 0; i<linha; i++)
+        {
+            for(int j = 0; j < coluna; j++)
+            {
+                if(matriz[i][j] + constante > lim)
+                {
+                    matriz[i][j] = 255;
+                }
+                else{
+                    matriz[i][j] += constante;
+                }
+                
+            }
+        }
+        
+    }
 }
