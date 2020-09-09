@@ -18,6 +18,8 @@ import java.util.Scanner;
 public class ImagemPGM {
     
     private String endereco;
+    private int linha;
+    private int coluna;
     private int[][] matriz;
     private int[][] imagemOriginal;
     private int lim;
@@ -34,6 +36,20 @@ public class ImagemPGM {
         
         
     }
+    public int getLinha(){
+        return linha;
+    }
+    public int getColuna(){
+        return coluna;
+    }
+    
+    public int getValorNaMatrizPGM(int i, int j)
+    {
+        return matriz[i][j];
+    }
+    public int getLimite(){
+        return lim;
+    }
     private int[][] criarMatriz(Scanner i){
         int[][] matrix;
         
@@ -42,8 +58,8 @@ public class ImagemPGM {
         lixo = i.nextLine();
         //System.out.println(lixo);
         
-        int linha = i.nextInt();
-        int coluna = i.nextInt();
+        coluna = i.nextInt();
+        linha = i.nextInt();
         
         
         matrix = new int[linha + 1][coluna + 1];
@@ -72,8 +88,7 @@ public class ImagemPGM {
     
     public void salvarImagem(int[][] imagem, String nameFile){
         
-        int coluna = imagem[0].length - 1;
-        int linha = imagem.length - 1;
+        
         
         try {
         FileWriter fw = new FileWriter(nameFile);

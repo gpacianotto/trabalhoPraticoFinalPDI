@@ -19,9 +19,9 @@ public class ProcessadorImagem {
     public static void main(String[] args) throws FileNotFoundException {
         
         
-        ImagemPGM imagem1 = new ImagemPGM("imagem.pgm");
+        TelaPrincipal t = new TelaPrincipal();
         
-        imagem1.salvarImagem(imagem1.getCurrentMatrix(), "copia.pgm");
+        t.setVisible(true);
         
     }
     
