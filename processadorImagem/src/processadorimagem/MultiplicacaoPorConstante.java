@@ -9,26 +9,29 @@ package processadorimagem;
  *
  * @author SAMSUNG
  */
-public class SomaPorConstante extends javax.swing.JFrame {
+public class MultiplicacaoPorConstante extends javax.swing.JFrame {
 
     /**
-     * Creates new form SomaPorConstante
+     * Creates new form MultiplicacaoPorConstante
      */
     
     ImagemPGM imagem;
     TelaPrincipal t;
     
-    public SomaPorConstante(ImagemPGM imagem, TelaPrincipal t) {
+    public MultiplicacaoPorConstante(TelaPrincipal t, ImagemPGM imagem) {
         initComponents();
         
         this.imagem = imagem;
         this.t = t;
+        
     }
 
-    private SomaPorConstante() {
+    private MultiplicacaoPorConstante() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,9 +55,9 @@ public class SomaPorConstante extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("SOMA POR CONSTANTE");
+        jLabel1.setText("MULTIPLICAÇÃO POR CONSTANTE");
 
-        botaoSoma.setText("Somar");
+        botaoSoma.setText("Multiplicar");
         botaoSoma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSomaActionPerformed(evt);
@@ -67,21 +70,17 @@ public class SomaPorConstante extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 76, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
+                .addGap(135, 135, 135)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(tbConstante, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(botaoSoma)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                    .addComponent(botaoSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(tbConstante, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +93,7 @@ public class SomaPorConstante extends javax.swing.JFrame {
                 .addComponent(tbConstante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(botaoSoma)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
@@ -106,13 +105,13 @@ public class SomaPorConstante extends javax.swing.JFrame {
 
     private void botaoSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomaActionPerformed
         // TODO add your handling code here:
-        
+
         int c = Integer.valueOf(tbConstante.getText());
-        
-        imagem.somaPorConstante(c);
-        
+
+        imagem.multiplicacaoPorConstante(c);
+
         t.atualizarImagem();
-        
+
     }//GEN-LAST:event_botaoSomaActionPerformed
 
     /**
@@ -132,20 +131,20 @@ public class SomaPorConstante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SomaPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MultiplicacaoPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SomaPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MultiplicacaoPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SomaPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MultiplicacaoPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SomaPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MultiplicacaoPorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SomaPorConstante().setVisible(true);
+                new MultiplicacaoPorConstante().setVisible(true);
             }
         });
     }

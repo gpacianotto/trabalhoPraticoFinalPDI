@@ -128,4 +128,20 @@ public class ImagemPGM {
         }
         
     }
+    public void multiplicacaoPorConstante(int constante){
+        for(int i = 0; i<linha; i++)
+        {
+            for(int j = 0; j < coluna; j++)
+            {
+                if(matriz[i][j] * constante > lim)
+                {
+                    matriz[i][j] = 255;
+                }
+                else{
+                    matriz[i][j] = matriz[i][j] * constante;
+                }
+                
+            }
+        }
+    }
 }
