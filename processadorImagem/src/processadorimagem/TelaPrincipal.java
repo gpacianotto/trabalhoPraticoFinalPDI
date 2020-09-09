@@ -124,7 +124,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         int[][] aux = imagem.getCurrentMatrix();
         
         painelPrincipal.setImage(new BufferedImage(imagem.getLinha(), imagem.getColuna(), BufferedImage.TYPE_INT_RGB));
-        painelPrincipal.setSize(imagem.getLinha(), imagem.getColuna());
+        painelPrincipal.setSize(imagem.getColuna(), imagem.getLinha());
         painelPrincipal.fitSize();
         painelPrincipal.cleanImage();
         
