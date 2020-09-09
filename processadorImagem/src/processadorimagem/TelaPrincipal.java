@@ -8,6 +8,9 @@ package processadorimagem;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import static oracle.jrockit.jfr.events.Bits.floatValue;
 
 /**
@@ -21,22 +24,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     private ViewPanel canvas;
     private ImagemPGM imagem;
+    
+     
+     
+    
     public TelaPrincipal() {
         initComponents();
         
+        
+        /*
         try{
-            imagem = new ImagemPGM("kook.pgm");
+            imagem = new ImagemPGM("imagem.pgm");
         }
         catch(FileNotFoundException e){
             
         }
+        */
+        painelPrincipal.cleanImage();
+        painelPrincipal.revalidate();
         
-        imagem.salvarImagem(imagem.getCurrentMatrix(), "");
+        //imagem.salvarImagem(imagem.getCurrentMatrix(), "");
         
-        painelPrincipal.setSize(imagem.getLinha(), imagem.getColuna());
+        //painelPrincipal.setSize(imagem.getLinha(), imagem.getColuna());
         
-        this.atualizarImagem();
-        painelPrincipal.setSize(imagem.getLinha(), imagem.getColuna());
+        //this.atualizarImagem();
+        //painelPrincipal.setSize(imagem.getLinha(), imagem.getColuna());
     }
 
     /**
@@ -49,6 +61,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         painelPrincipal = new processadorimagem.ViewPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,8 +76,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         painelPrincipalLayout.setVerticalGroup(
             painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 522, Short.MAX_VALUE)
+            .addGap(0, 501, Short.MAX_VALUE)
         );
+
+        jMenu1.setText("Arquivo");
+
+        jMenuItem1.setText("Abrir Imagem");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,6 +115,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        
+        JFileChooser abrir = new JFileChooser();
+        abrir.setFileFilter(new FileFilterPGM());
+        
+        int opcao;
+        
+        opcao = abrir.showOpenDialog(null);
+        
+        if(opcao == JFileChooser.APPROVE_OPTION){
+            try {
+                imagem = new ImagemPGM(abrir.getSelectedFile().getAbsolutePath());
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.atualizarImagem();
+        }
+        else return;
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     
     /**
@@ -141,6 +197,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private processadorimagem.ViewPanel painelPrincipal;
     // End of variables declaration//GEN-END:variables
 }
