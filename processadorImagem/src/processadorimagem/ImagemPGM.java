@@ -49,7 +49,84 @@ public class ImagemPGM {
         
         
     }
+    public int calculaDivisor(int[][] matriz){
+        int divisor=0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                divisor += matriz[i][j];
+            }
+        }   
+        return divisor;
+    }
     
+    public void filtragemEspacial(int tamanhoFiltro){ 
+        
+        int[][] matrizFiltro = gerarFiltro(tamanhoFiltro);
+        
+        int divisor = calculaDivisor(matrizFiltro); //Calc o divisor,somando os elementos da matriz filtro
+        int j, i, novopx = 0;
+        int novamatriz[][] = matriz; 
+        int distancia = matrizFiltro.length / 2; //distancia do centro da matriz ate a borda
+        int aux; //deixa a distancia negativa para posicionar a leitura no lugar correto
+        int aux1, aux2;
+        aux1 = aux2 = 0;   
+        int vetorpx[] = new int[linha*coluna];	
+        //percorrendo a matriz original
+        for (i = distancia; i < linha-distancia; i++){ 
+            for(j = distancia; j < coluna-distancia; j++){
+                aux = -distancia; 
+                aux1 = aux;
+                for(int x = 0; x < (distancia*2) + 1; x++){
+                    aux2 = aux;
+                    for(int y = 0; y < (distancia * 2) + 1; y++){
+                      novopx += (matriz[i + aux1][j + aux2] * matrizFiltro[x][y]);
+                      aux2++; 
+                    }
+                    aux1++;
+                }
+                novamatriz[i][j] = novopx/divisor;
+                novopx=0;
+            }
+        }
+        int k = 0;
+        for (i = 0; i < linha; i++){
+            for(j=0; j < coluna; j++){
+                vetorpx[k] = novamatriz[i][j];
+                k++;
+            }
+        }
+        
+        
+        matriz = convertArraytoMatriz(vetorpx);
+        
+    }
+    
+    public int[][] convertArraytoMatriz(int [] arranjo){
+        int[][] matriX = new int[linha][coluna];
+        
+        int k = 0;
+        
+        for(int i = 0; i<linha; i++)
+        {
+            for(int j = 0; j<coluna; j++)
+            {
+                matriX[i][j] = arranjo[k];
+                k++;
+            }
+        }
+        
+        return matriX;
+    }
+    
+    public int[][] gerarFiltro(int dim){
+        int matriz[][] = new int[dim][dim];
+             for(int i=0;i < dim;i++){
+                for(int j = 0; j < dim; j++){
+                    matriz[i][j] = 1;
+                }
+            }
+        return matriz;
+    }
     public int[] calcularHistograma() {
         
         
