@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -99,6 +100,38 @@ public class ImagemPGM {
         
         matriz = convertArraytoMatriz(vetorpx);
         
+    }
+    
+    public void filtroMediana(){
+        int [][] mat = new int[linha][coluna];
+        for(int i=0;i<linha;i++){
+            for(int j=0;j<coluna;j++){
+                matriz[i][j] = pixelMediano(i, j);
+            }
+        }
+        
+    }
+    
+    public boolean posiValida(int [][] mat, int i, int j){
+        try{
+            mat[i][j] = mat[i][j];
+        }catch(Exception e){
+            return false;
+        }
+        return true;
+    }
+    
+    public int pixelMediano(int I, int J){
+        ArrayList<Integer> vetor = new ArrayList<Integer>();
+        for(int i=I-1;i<I+2;i++){
+            for(int j=J-1;j<J+2;j++){
+                if(posiValida(getCurrentMatrix(), i, j)){
+                    vetor.add(getValorNaMatrizPGM(i, j));
+                }
+            }
+        }
+        vetor.sort(null);
+        return vetor.get(vetor.size()/2);
     }
     
     public int[][] convertArraytoMatriz(int [] arranjo){
