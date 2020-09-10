@@ -362,9 +362,9 @@ public class ImagemPGM {
         FileWriter fw = new FileWriter(nameFile);
         fw.write("P2");
         fw.write("\n");
-        fw.write(Integer.toString(linha));
-        fw.write(" ");
         fw.write(Integer.toString(coluna));
+        fw.write(" ");
+        fw.write(Integer.toString(linha));
         fw.write("\n");
         fw.write(Integer.toString(lim));
         fw.write("\n");
