@@ -200,6 +200,69 @@ public class ImagemPGM {
         
     }
     
+    public double[][] somaLaplaciano(int [][] original, double [][] resultante){
+        double [][] novamatriz = resultante;
+        for (int i = 0; i < novamatriz.length; i++) {
+            for (int j = 0; j < novamatriz[1].length; j++) {
+                if(resultante[i][j] + original[i][j] < 256 && resultante[i][j] + original[i][j] >= 0)
+                    novamatriz[i][j] = resultante[i][j] + original[i][j];
+                else if (resultante[i][j] + original[i][j] > 255)
+                    novamatriz[i][j] = 255;
+                else if (resultante[i][j] + original[i][j] < 0)
+                    novamatriz[i][j] = 0;
+            }
+        }
+        return novamatriz;
+    }
+    
+    public void filtroLaplaciano(int filtro, int tipo){
+        int j, i; 
+        double novopx = 0;
+        double novamatriz[][] = new double[linha][coluna];
+        int [][] matrizFiltro1 = {{ 0, -1,  0}, {-1, 4, -1}, { 0, -1, 0}};
+        int [][] matrizFiltro2 = {{-1, -1, -1}, {-1, 8, -1}, {-1, -1, -1}};
+        int vetorpx[] = new int[coluna*linha];
+        int [][] matrizFiltro;
+        int aux; //deixa a distancia negativa para posicionar a leitura no lugar correto
+        int aux1;
+        int aux2;	        
+        if(filtro == 0)
+            matrizFiltro = matrizFiltro1;
+        else
+            matrizFiltro = matrizFiltro2;
+        int distancia = matrizFiltro.length/2; //distancia do centro da matriz ate a borda
+        for(i = distancia; i < linha-distancia; i++){
+            for(j = distancia; j < coluna-distancia; j++){
+                aux = -distancia; //para i e j da matriz original, atribui os valores da distancia ao aux
+                aux1 = aux;
+                for(int x = 0; x < (distancia*2) + 1; x++){
+                    aux2 = aux;
+                    for(int y = 0; y < (distancia*2) + 1; y++){
+                      novopx += (int)(matriz[i+aux1][j+aux2] * matrizFiltro[x][y]);
+                      aux2++; 
+                    }
+                    aux1++;
+                }
+                novamatriz[i][j] = novopx;
+                novopx=0;
+            }
+        }		       
+        if(tipo == 1)
+            novamatriz = somaLaplaciano(matriz, novamatriz);   
+        int k = 0;
+        for(i = 0; i < linha; i++){
+            for(j = 0; j < coluna; j++){
+                vetorpx[k] = (int)novamatriz[i][j];
+                k++;
+            }
+        }
+        
+        matriz = convertArraytoMatriz(vetorpx);
+        
+    }
+    
+    
+    
     public int getLinha(){
         return linha;
     }
