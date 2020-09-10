@@ -22,6 +22,7 @@ public class ImagemPGM {
     private int coluna;
     private int[][] matriz;
     private int[][] imagemOriginal;
+    private int[] histograma;
     private int lim;
     private Scanner in;
     
@@ -31,6 +32,8 @@ public class ImagemPGM {
         System.out.println(endereco);
         in = new Scanner(new FileReader(endereco)); // cria um scanner para ler arquivos
         matriz = criarMatriz(in);
+        
+        histograma = calcularHistograma();
         
         imagemOriginal = new int[linha + 1][coluna + 1];
         
@@ -46,6 +49,47 @@ public class ImagemPGM {
         
         
     }
+    
+    public int[] calcularHistograma() {
+        
+        
+        int[] histograma1 = new int[lim + 1];
+        
+
+        for (int i = 0; i < linha; i++) {
+            for (int j = 0; j < coluna; j++) {
+                
+                histograma1[matriz[i][j]] += 1;
+            }
+        }
+
+        return histograma1;
+    }
+    
+    public void equalizarHistograma() {
+        
+        int mn = linha * coluna;
+        float[] pr = new float[lim + 1];
+        int[] sk = new int[lim + 1];
+
+        for (int i = 0; i < pr.length; i++) {
+            pr[i] = ((float) histograma[i]) / mn;
+        }
+        
+        float acumulado = 0.0f;
+        for (int i = 0; i < sk.length; i++) {
+            acumulado += pr[i];
+            sk[i] = (int) Math.round(lim * acumulado);
+        }
+
+        for (int i = 0; i < linha; i++) {
+            for (int j = 0; j < coluna; j++) {
+                matriz[i][j] = sk[matriz[i][j]];
+            }
+        }
+        
+    }
+    
     public int getLinha(){
         return linha;
     }
@@ -101,6 +145,28 @@ public class ImagemPGM {
                 if((matriz[x][y] > valor1) && (matriz[x][y] < valor2))
                 {
                     matriz[x][y] = valor;
+                }
+   
+            }
+        }
+        
+    }
+    
+    public void fatiamentoBinario(int valor1, int valor2, int valorintervalo, int valorFora){
+        
+        //System.out.println("Colunas: "+coluna+" Linhas: "+linha);
+        
+        for(int x = 0; x < linha; x++)
+        {
+            for(int y = 0; y < coluna; y++)
+            {
+                
+                if((matriz[x][y] > valor1) && (matriz[x][y] < valor2))
+                {
+                    matriz[x][y] = valorintervalo;
+                }
+                else{
+                    matriz[x][y] = valorFora;
                 }
    
             }
