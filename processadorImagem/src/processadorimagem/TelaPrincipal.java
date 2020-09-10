@@ -128,6 +128,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Fatiamento Normal");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Fatiamento Binário");
@@ -193,6 +198,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        
+        FatiamentoNormal fn = new FatiamentoNormal(imagem, this);
+        
+        fn.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     
     /**

@@ -89,6 +89,25 @@ public class ImagemPGM {
         return matrix;
     }
     
+    public void fatiamentoNormal(int valor1, int valor2, int valor){
+        
+        //System.out.println("Colunas: "+coluna+" Linhas: "+linha);
+        
+        for(int x = 0; x < linha; x++)
+        {
+            for(int y = 0; y < coluna; y++)
+            {
+                
+                if((matriz[x][y] > valor1) && (matriz[x][y] < valor2))
+                {
+                    matriz[x][y] = valor;
+                }
+   
+            }
+        }
+        
+    }
+    
     public int[][] getCurrentMatrix(){
         return matriz;
     }
