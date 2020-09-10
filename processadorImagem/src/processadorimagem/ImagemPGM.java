@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -362,6 +363,7 @@ public class ImagemPGM {
         FileWriter fw = new FileWriter(nameFile);
         fw.write("P2");
         fw.write("\n");
+        fw.write("# Created by Guilherme Pacianotto \n");
         fw.write(Integer.toString(coluna));
         fw.write(" ");
         fw.write(Integer.toString(linha));
@@ -410,6 +412,71 @@ public class ImagemPGM {
         }
         
     }
+    
+    public void somarImagens(ImagemPGM i2){
+        
+        int soma;
+        
+        if((getColuna() == i2.getColuna()) && (getLinha() == i2.getLinha()))
+        {
+            int[][] imagem2 = i2.getCurrentMatrix();
+            
+            
+            for(int i = 0; i < linha; i++)
+            {
+                for(int j = 0; j < coluna; j++)
+                {
+                    soma = matriz[i][j] + imagem2[i][j];
+                    
+                    if(soma > lim)
+                    {
+                        matriz[i][j] = lim;
+                    }
+                    else{
+                        matriz[i][j] = soma;
+                    }
+                    
+                }
+            }
+            
+        }
+        else JOptionPane.showMessageDialog (null, "As imagens não possuem o mesmo tamanho");
+        
+        
+        
+    }
+    
+    
+    public void subtrairImagens(ImagemPGM i2){
+        
+        int soma;
+        
+        if((getColuna() == i2.getColuna()) && (getLinha() == i2.getLinha()))
+        {
+            int[][] imagem2 = i2.getCurrentMatrix();
+            
+            
+            for(int i = 0; i < linha; i++)
+            {
+                for(int j = 0; j < coluna; j++)
+                {
+                    soma = matriz[i][j] - imagem2[i][j];
+                    
+                    if(soma < 0)
+                    {
+                        matriz[i][j] = 0;
+                    }
+                    else{
+                        matriz[i][j] = soma;
+                    }
+                    
+                }
+            }
+            
+        }
+        else JOptionPane.showMessageDialog (null, "As imagens não possuem o mesmo tamanho");
+    }
+    
     public void multiplicacaoPorConstante(int constante){
         for(int i = 0; i<linha; i++)
         {
