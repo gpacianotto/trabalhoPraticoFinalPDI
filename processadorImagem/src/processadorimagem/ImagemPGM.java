@@ -32,7 +32,17 @@ public class ImagemPGM {
         in = new Scanner(new FileReader(endereco)); // cria um scanner para ler arquivos
         matriz = criarMatriz(in);
         
-        imagemOriginal = getCurrentMatrix();
+        imagemOriginal = new int[linha + 1][coluna + 1];
+        
+        for(int i = 0; i<linha; i++)
+        {
+            for(int j = 0; j < coluna; j++)
+            {
+                
+                imagemOriginal[i][j] = matriz[i][j];
+                
+            }
+        }
         
         
     }
@@ -108,6 +118,20 @@ public class ImagemPGM {
         }
         fw.flush();
         } catch (IOException e) {}
+    }
+    
+    public void chamarImagemOriginal(){
+        
+        for(int i = 0; i<linha; i++)
+        {
+            for(int j = 0; j < coluna; j++)
+            {
+                
+                matriz[i][j] = imagemOriginal[i][j];
+                
+            }
+        }
+        
     }
     
     public void somaPorConstante(int constante){

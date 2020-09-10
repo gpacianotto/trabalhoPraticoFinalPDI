@@ -61,12 +61,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         painelPrincipal = new processadorimagem.ViewPanel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -84,6 +87,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(painelPrincipal);
         painelPrincipal.setBounds(10, 56, 658, 501);
+
+        jButton1.setText("Imagem Original");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(10, 10, 180, 40);
 
         jMenu1.setText("Arquivo");
 
@@ -114,6 +126,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem3);
+
+        jMenuItem4.setText("Fatiamento Normal");
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Fatiamento Binário");
+        jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
 
@@ -165,6 +183,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        imagem.chamarImagemOriginal();
+        
+        this.atualizarImagem();
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     /**
@@ -224,12 +252,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private processadorimagem.ViewPanel painelPrincipal;
     // End of variables declaration//GEN-END:variables
 }
