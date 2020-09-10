@@ -27,6 +27,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private ImagemPGM imagem;
     private ImagemPGM imagem2;
     
+    private ImagemPPM imagemppm;
+    
      
      
     
@@ -64,6 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelPrincipal = new processadorimagem.ViewPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -82,8 +85,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 800));
         getContentPane().setLayout(null);
 
         javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
@@ -100,7 +114,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(painelPrincipal);
         painelPrincipal.setBounds(10, 56, 658, 501);
 
-        jButton1.setText("Imagem Original");
+        jButton1.setText("Imagem Original PGM");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -108,6 +122,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 10, 180, 40);
+
+        jButton2.setText("Imagem Original PPM");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(200, 10, 180, 40);
 
         jMenu1.setText("Arquivo");
 
@@ -229,6 +252,78 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setText("Imagens PPM");
+
+        jMenuItem14.setText("Abrir");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem14);
+
+        jMenuItem21.setText("Salvar");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem21);
+
+        jMenu6.setText("Processamentos");
+
+        jMenuItem15.setText("Só vermelho");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem15);
+
+        jMenuItem16.setText("Só verde");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem16);
+
+        jMenuItem17.setText("Só azul");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem17);
+
+        jMenuItem18.setText("Realce Vermelho");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem18);
+
+        jMenuItem19.setText("Realce Verde");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem19);
+
+        jMenuItem20.setText("Realce Azul");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem20);
+
+        jMenu5.add(jMenu6);
+
+        jMenuBar1.add(jMenu5);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -260,9 +355,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         
-        SomaPorConstante s = new SomaPorConstante(imagem, this);
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            SomaPorConstante s = new SomaPorConstante(imagem, this);
         
-        s.setVisible(true);
+            s.setVisible(true);
+        }
+        
+        
         
         
         
@@ -270,20 +373,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            MultiplicacaoPorConstante m = new MultiplicacaoPorConstante(this, imagem);
         
-        MultiplicacaoPorConstante m = new MultiplicacaoPorConstante(this, imagem);
-        
-        m.setVisible(true);
-        
+            m.setVisible(true);
+        }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        imagem.chamarImagemOriginal();
+        try{
+            imagem.chamarImagemOriginal();
         
-        this.atualizarImagem();
+            this.atualizarImagem();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        
+        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -291,63 +405,94 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
-        FatiamentoNormal fn = new FatiamentoNormal(imagem, this);
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
         
-        fn.setVisible(true);
+            FatiamentoNormal fn = new FatiamentoNormal(imagem, this);
         
+            fn.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            FatiamentoBinario fb = new FatiamentoBinario(imagem, this);
         
-        FatiamentoBinario fb = new FatiamentoBinario(imagem, this);
-        
-        fb.setVisible(true);
-        
+            fb.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            imagem.equalizarHistograma();
         
-        imagem.equalizarHistograma();
-        
-        this.atualizarImagem();
-        
+            this.atualizarImagem();
+        }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
         FiltroMedia fm = new FiltroMedia(imagem,this);
         
         fm.setVisible(true);
-        
+        }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            imagem.filtroMediana();
         
-        imagem.filtroMediana();
-        
-        this.atualizarImagem();
-        
+            this.atualizarImagem();
+        }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            imagem.filtroLaplaciano(0, 1);
         
-        imagem.filtroLaplaciano(0, 1);
-        
-        this.atualizarImagem();
-        
+            this.atualizarImagem();
+        }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            imagem.filtroLaplaciano(1, 1);
         
-        imagem.filtroLaplaciano(1, 1);
-        
-        this.atualizarImagem();
+            this.atualizarImagem();
+        }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -378,14 +523,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
+        if(imagem == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            String nomeDoArquivo;
         
-        String nomeDoArquivo;
+            nomeDoArquivo = JOptionPane.showInputDialog("Qual o nome do Arquivo que deseja salvar?");
         
-        nomeDoArquivo = JOptionPane.showInputDialog("Qual o nome do Arquivo que deseja salvar?");
+            nomeDoArquivo += ".pgm";
+            
+            imagem.salvarImagem(imagem.getCurrentMatrix(), nomeDoArquivo);
+        }
         
-        nomeDoArquivo += ".pgm";
-        
-        imagem.salvarImagem(imagem.getCurrentMatrix(), nomeDoArquivo);
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -414,6 +565,115 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.atualizarImagem();
         
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        
+        JFileChooser abrir = new JFileChooser();
+        abrir.setFileFilter(new FileFilterPGM());
+        
+        int opcao;
+        
+        opcao = abrir.showOpenDialog(null);
+        
+        if(opcao == JFileChooser.APPROVE_OPTION){
+            try {
+                imagemppm = new ImagemPPM(abrir.getSelectedFile().getAbsolutePath());
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.atualizarImagemPPM();
+        }
+        else return;
+        
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            imagemppm.chamarImagemOriginal();
+        
+            this.atualizarImagemPPM();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PPM!");
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.soVermelho();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.soVerde();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.soAzul();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.filtroExclusivoVermelho();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.filtroExclusivoVerde();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        // TODO add your handling code here:
+        
+        imagemppm.filtroExclusivoAzul();
+        
+        this.atualizarImagemPPM();
+        
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        // TODO add your handling code here:
+        
+        if(imagemppm == null)
+        {
+            JOptionPane.showMessageDialog (null, "Esta imagem não é PGM!");
+        }
+        else{
+            String nomeDoArquivo;
+        
+            nomeDoArquivo = JOptionPane.showInputDialog("Qual o nome do Arquivo que deseja salvar?");
+        
+            nomeDoArquivo += ".ppm";
+            
+            imagemppm.salvarImagem(imagemppm.getCurrentMatrix(), nomeDoArquivo);
+        }
+        
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
 
     
     /**
@@ -471,20 +731,52 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.painelPrincipal.repaint();
         this.painelPrincipal.revalidate();
     }
+    
+    public void atualizarImagemPPM(){
+        
+        int[][][] aux = imagemppm.getCurrentMatrix();
+        
+        painelPrincipal.setImage(new BufferedImage(imagemppm.getLinha(), imagemppm.getColuna(), BufferedImage.TYPE_INT_RGB));
+        painelPrincipal.setSize(imagemppm.getColuna(), imagemppm.getLinha());
+        painelPrincipal.fitSize();
+        painelPrincipal.cleanImage();
+        
+        for(int i=0;i<imagemppm.getLinha();i++){
+            for(int j=0;j<imagemppm.getColuna();j++){
+                //int pixel = (this.imagem.getValorNaMatrizPGM(i, j));
+                painelPrincipal.plot(j, i, new Color(aux[i][j][0], aux[i][j][1], aux[i][j][2]));
+               //System.out.println(imagem.getValorNaMatrizPGM(i, j)+" ");
+            }
+            //System.out.println("");
+        }
+        this.painelPrincipal.repaint();
+        this.painelPrincipal.revalidate();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
