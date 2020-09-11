@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="processadorImagem">
+  <ClassDiagramComponents>
+    <Class name="FatiamentoBinario" package="processadorimagem" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="package"/>
+        <Field name="t" type="TelaPrincipal" visibility="package"/>
+        <Field name="intervalo1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="intervalo2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="valorFora" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="valorIntervalo" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ImagemPGM" name="imagem"/>
+          <Argument type="TelaPrincipal" name="t"/>
+        </Constructor>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="intervalo2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FatiamentoNormal" package="processadorimagem" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="package"/>
+        <Field name="t" type="TelaPrincipal" visibility="package"/>
+        <Field name="intervalo1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="intervalo2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="valorIntervalo" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ImagemPGM" name="imagem"/>
+          <Argument type="TelaPrincipal" name="t"/>
+        </Constructor>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="intervalo2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FileFilterPGM" package="processadorimagem" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="accept" returnType="boolean" visibility="public">
+          <Argument type="File" name="f"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FiltroMedia" package="processadorimagem" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="package"/>
+        <Field name="t" type="TelaPrincipal" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="tamanhoFiltro" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ImagemPGM" name="imagem"/>
+          <Argument type="TelaPrincipal" name="t"/>
+        </Constructor>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagemPGM" package="processadorimagem" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="endereco" type="String" visibility="private"/>
+        <Field name="linha" type="int" visibility="private"/>
+        <Field name="coluna" type="int" visibility="private"/>
+        <Field name="matriz" type="int[][]" visibility="private"/>
+        <Field name="imagemOriginal" type="int[][]" visibility="private"/>
+        <Field name="histograma" type="int[]" visibility="private"/>
+        <Field name="lim" type="int" visibility="private"/>
+        <Field name="in" type="Scanner" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="path"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculaDivisor" returnType="int" visibility="public">
+          <Argument type="int[][]" name="matriz"/>
+        </Method>
+        <Method name="filtragemEspacial" returnType="void" visibility="public">
+          <Argument type="int" name="tamanhoFiltro"/>
+        </Method>
+        <Method name="filtroMediana" returnType="void" visibility="public"/>
+        <Method name="posiValida" returnType="boolean" visibility="public">
+          <Argument type="int[][]" name="mat"/>
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="pixelMediano" returnType="int" visibility="public">
+          <Argument type="int" name="I"/>
+          <Argument type="int" name="J"/>
+        </Method>
+        <Method name="convertArraytoMatriz" returnType="int[][]" visibility="public">
+          <Argument type="int[]" name="arranjo"/>
+        </Method>
+        <Method name="gerarFiltro" returnType="int[][]" visibility="public">
+          <Argument type="int" name="dim"/>
+        </Method>
+        <Method name="calcularHistograma" returnType="int[]" visibility="public"/>
+        <Method name="equalizarHistograma" returnType="void" visibility="public"/>
+        <Method name="somaLaplaciano" returnType="double[][]" visibility="public">
+          <Argument type="int[][]" name="original"/>
+          <Argument type="double[][]" name="resultante"/>
+        </Method>
+        <Method name="filtroLaplaciano" returnType="void" visibility="public">
+          <Argument type="int" name="filtro"/>
+          <Argument type="int" name="tipo"/>
+        </Method>
+        <Method name="getLinha" returnType="int" visibility="public"/>
+        <Method name="getColuna" returnType="int" visibility="public"/>
+        <Method name="getValorNaMatrizPGM" returnType="int" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="getLimite" returnType="int" visibility="public"/>
+        <Method name="criarMatriz" returnType="int[][]" visibility="private">
+          <Argument type="Scanner" name="i"/>
+        </Method>
+        <Method name="fatiamentoNormal" returnType="void" visibility="public">
+          <Argument type="int" name="valor1"/>
+          <Argument type="int" name="valor2"/>
+          <Argument type="int" name="valor"/>
+        </Method>
+        <Method name="fatiamentoBinario" returnType="void" visibility="public">
+          <Argument type="int" name="valor1"/>
+          <Argument type="int" name="valor2"/>
+          <Argument type="int" name="valorintervalo"/>
+          <Argument type="int" name="valorFora"/>
+        </Method>
+        <Method name="getCurrentMatrix" returnType="int[][]" visibility="public"/>
+        <Method name="getOriginalMatrix" returnType="int[][]" visibility="public"/>
+        <Method name="salvarImagem" returnType="void" visibility="public">
+          <Argument type="int[][]" name="imagem"/>
+          <Argument type="String" name="nameFile"/>
+        </Method>
+        <Method name="chamarImagemOriginal" returnType="void" visibility="public"/>
+        <Method name="somaPorConstante" returnType="void" visibility="public">
+          <Argument type="int" name="constante"/>
+        </Method>
+        <Method name="somarImagens" returnType="void" visibility="public">
+          <Argument type="ImagemPGM" name="i2"/>
+        </Method>
+        <Method name="subtrairImagens" returnType="void" visibility="public">
+          <Argument type="ImagemPGM" name="i2"/>
+        </Method>
+        <Method name="multiplicacaoPorConstante" returnType="void" visibility="public">
+          <Argument type="int" name="constante"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagemPPM" package="processadorimagem" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="matriz" type="int[][][]" visibility="private"/>
+        <Field name="imagemOriginal" type="int[][][]" visibility="private"/>
+        <Field name="linha" type="int" visibility="private"/>
+        <Field name="coluna" type="int" visibility="private"/>
+        <Field name="lim" type="int" visibility="private"/>
+        <Field name="in" type="Scanner" visibility="private"/>
+        <Field name="endereco" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="path"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="salvarImagem" returnType="void" visibility="public">
+          <Argument type="int[][][]" name="imagem"/>
+          <Argument type="String" name="nameFile"/>
+        </Method>
+        <Method name="getCurrentMatrix" returnType="int[][][]" visibility="public"/>
+        <Method name="soVermelho" returnType="void" visibility="public"/>
+        <Method name="soVerde" returnType="void" visibility="public"/>
+        <Method name="soAzul" returnType="void" visibility="public"/>
+        <Method name="filtroExclusivoVermelho" returnType="void" visibility="public"/>
+        <Method name="filtroExclusivoVerde" returnType="void" visibility="public"/>
+        <Method name="filtroExclusivoAzul" returnType="void" visibility="public"/>
+        <Method name="getLinha" returnType="int" visibility="public"/>
+        <Method name="getColuna" returnType="int" visibility="public"/>
+        <Method name="chamarImagemOriginal" returnType="void" visibility="public"/>
+        <Method name="getOriginalMatrix" returnType="int[][][]" visibility="public"/>
+        <Method name="criaMatriz" returnType="void" visibility="public">
+          <Argument type="Scanner" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MultiplicacaoPorConstante" package="processadorimagem" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="package"/>
+        <Field name="t" type="TelaPrincipal" visibility="package"/>
+        <Field name="botaoSoma" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="tbConstante" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="TelaPrincipal" name="t"/>
+          <Argument type="ImagemPGM" name="imagem"/>
+        </Constructor>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="tbConstanteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="botaoSomaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProcessadorImagem" package="processadorimagem" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SomaPorConstante" package="processadorimagem" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="package"/>
+        <Field name="t" type="TelaPrincipal" visibility="package"/>
+        <Field name="botaoSoma" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="tbConstante" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ImagemPGM" name="imagem"/>
+          <Argument type="TelaPrincipal" name="t"/>
+        </Constructor>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="tbConstanteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="botaoSomaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TelaPrincipal" package="processadorimagem" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="imagem" type="ImagemPGM" visibility="private"/>
+        <Field name="imagem2" type="ImagemPGM" visibility="private"/>
+        <Field name="imagemppm" type="ImagemPPM" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jMenu1" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu2" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu3" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu4" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu5" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu6" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuItem1" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem10" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem11" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem12" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem13" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem14" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem15" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem16" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem17" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem18" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem19" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem2" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem20" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem21" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem3" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem4" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem5" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem6" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem7" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem8" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem9" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="painelPrincipal" type="processadorimagem.ViewPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jMenuItem1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem6ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem7ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem8ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem9ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem10ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem11ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem12ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem13ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem14ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem15ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem16ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem17ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem18ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem19ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem20ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem21ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="atualizarImagem" returnType="void" visibility="public"/>
+        <Method name="atualizarImagemPPM" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ViewPanel" package="processadorimagem" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="canvas" type="BufferedImage" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setImage" returnType="void" visibility="public">
+          <Argument type="BufferedImage" name="novaImagem"/>
+        </Method>
+        <Method name="getCanvas" returnType="BufferedImage" visibility="public"/>
+        <Method name="paintComponent" returnType="void" visibility="protected">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="fitSize" returnType="void" visibility="public"/>
+        <Method name="plot" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+          <Argument type="Color" name="cor"/>
+        </Method>
+        <Method name="getPixel" returnType="Color" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="cleanImage" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="imagem" source="processadorimagem.FatiamentoNormal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.FatiamentoBinario" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagemppm" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPPM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.SomaPorConstante" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.SomaPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="processadorimagem.ImagemPGM" target="processadorimagem.ImagemPGM" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.FatiamentoBinario" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.MultiplicacaoPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.FiltroMedia" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.FatiamentoNormal" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.FiltroMedia" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem2" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.MultiplicacaoPorConstante" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
