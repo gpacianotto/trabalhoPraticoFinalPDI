@@ -2,7 +2,7 @@
 
 <ClassDiagram name="processadorImagem">
   <ClassDiagramComponents>
-    <Class name="FatiamentoBinario" package="processadorimagem" visibility="public" xPosition="20.0" yPosition="20.0">
+    <Class name="FatiamentoBinario" package="processadorimagem" visibility="public" xPosition="1.0" yPosition="141.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="package"/>
         <Field name="t" type="TelaPrincipal" visibility="package"/>
@@ -25,8 +25,7 @@
         <Constructor visibility="private"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="intervalo2ActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -38,7 +37,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="FatiamentoNormal" package="processadorimagem" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="FatiamentoNormal" package="processadorimagem" visibility="public" xPosition="1706.0" yPosition="1832.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="package"/>
         <Field name="t" type="TelaPrincipal" visibility="package"/>
@@ -59,8 +58,7 @@ void" visibility="private"/>
         <Constructor visibility="private"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="intervalo2ActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -72,7 +70,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="FileFilterPGM" package="processadorimagem" visibility="public" xPosition="620.0" yPosition="20.0">
+    <Class name="FileFilterPGM" package="processadorimagem" visibility="public" xPosition="2773.0" yPosition="315.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -82,7 +80,7 @@ void" visibility="private"/>
         <Method name="getDescription" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="FiltroMedia" package="processadorimagem" visibility="public" xPosition="920.0" yPosition="20.0">
+    <Class name="FiltroMedia" package="processadorimagem" visibility="public" xPosition="719.0" yPosition="85.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="package"/>
         <Field name="t" type="TelaPrincipal" visibility="package"/>
@@ -99,8 +97,7 @@ void" visibility="private"/>
         <Constructor visibility="private"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -109,7 +106,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="ImagemPGM" package="processadorimagem" visibility="public" xPosition="1220.0" yPosition="20.0">
+    <Class name="ImagemPGM" package="processadorimagem" visibility="public" xPosition="2648.0" yPosition="1235.0">
       <Fields>
         <Field name="endereco" type="String" visibility="private"/>
         <Field name="linha" type="int" visibility="private"/>
@@ -236,7 +233,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="MultiplicacaoPorConstante" package="processadorimagem" visibility="public" xPosition="1820.0" yPosition="20.0">
+    <Class name="MultiplicacaoPorConstante" package="processadorimagem" visibility="public" xPosition="2313.0" yPosition="624.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="package"/>
         <Field name="t" type="TelaPrincipal" visibility="package"/>
@@ -253,8 +250,7 @@ void" visibility="private"/>
         <Constructor visibility="private"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="tbConstanteActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -275,7 +271,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="SomaPorConstante" package="processadorimagem" visibility="public" xPosition="20.0" yPosition="420.0">
+    <Class name="SomaPorConstante" package="processadorimagem" visibility="public" xPosition="104.0" yPosition="1196.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="package"/>
         <Field name="t" type="TelaPrincipal" visibility="package"/>
@@ -292,8 +288,7 @@ void" visibility="private"/>
         <Constructor visibility="private"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="tbConstanteActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -305,7 +300,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="TelaPrincipal" package="processadorimagem" visibility="public" xPosition="320.0" yPosition="420.0">
+    <Class name="TelaPrincipal" package="processadorimagem" visibility="public" xPosition="848.0" yPosition="889.0">
       <Fields>
         <Field name="imagem" type="ImagemPGM" visibility="private"/>
         <Field name="imagem2" type="ImagemPGM" visibility="private"/>
@@ -346,8 +341,7 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="jMenuItem1ActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -424,7 +418,7 @@ void" visibility="private"/>
         <Method name="atualizarImagemPPM" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ViewPanel" package="processadorimagem" visibility="public" xPosition="620.0" yPosition="420.0">
+    <Class name="ViewPanel" package="processadorimagem" visibility="public" xPosition="2264.0" yPosition="284.0">
       <Fields>
         <Field name="canvas" type="BufferedImage" visibility="private"/>
       </Fields>
@@ -455,18 +449,18 @@ void" visibility="private"/>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <HasRelation name="imagem" source="processadorimagem.FatiamentoNormal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagem" source="processadorimagem.FatiamentoBinario" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagemppm" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPPM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagem" source="processadorimagem.SomaPorConstante" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="t" source="processadorimagem.SomaPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="processadorimagem.ImagemPGM" target="processadorimagem.ImagemPGM" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagem" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="t" source="processadorimagem.FatiamentoBinario" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="t" source="processadorimagem.MultiplicacaoPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagem" source="processadorimagem.FiltroMedia" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="t" source="processadorimagem.FatiamentoNormal" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagemppm" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPPM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="t" source="processadorimagem.FiltroMedia" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="imagem2" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.FatiamentoBinario" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.SomaPorConstante" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="imagem" source="processadorimagem.MultiplicacaoPorConstante" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.MultiplicacaoPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.SomaPorConstante" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.FatiamentoBinario" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem" source="processadorimagem.FiltroMedia" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagem2" source="processadorimagem.TelaPrincipal" target="processadorimagem.ImagemPGM" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="processadorimagem.FatiamentoNormal" target="processadorimagem.TelaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
